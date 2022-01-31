@@ -44,6 +44,7 @@
     "@react-three/fiber": "^7.0.24",
     "@react-three/xr": "^3.2.0",
     "@types/three": "^0.136.0",
+    "@zappar/zappar-react-three-fiber": "^1.0.8",
     "pseudo-worker": "^1.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

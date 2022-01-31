@@ -1,19 +1,13 @@
 import ReactDOM from 'react-dom'
- import React, { useState, useEffect, useRef, Suspense, useMemo, useCallback } from 'react'
-import {
-  Interactive,
-  useXREvent,
-  Select,
-  Hover,
-  useXR,
-  RayGrab,
-  useHitTest,
-  ARCanvas,
-} from '@react-three/xr'
+import { Text, Box } from '@react-three/drei'
+import React, { useState, useRef } from 'react'
+// import { useFrame, useThree } from '@react-three/fiber'
+import { Interactive, useHitTest, ARCanvas } from '@react-three/xr'
+// import {
+//   ImageTracker
+// } from '@zappar/zappar-react-three-fiber';
 
-import { OrbitControls, Sky, Text, Plane, Box } from '@react-three/drei'
-import { useFrame, useThree } from '@react-three/fiber'
-import { Group } from 'three'
+import targetFile from './ammo_box.zpt';
 
 function Button(props) {
   const ref = useRef()
@@ -21,9 +15,9 @@ function Button(props) {
   const [color, setColor] = useState(0x123456)
 
   // ???
-  useHitTest((hit) => {
-    hit.decompose(ref.current.position, ref.current.rotation, ref.current.scale)
-  });
+  // useHitTest((hit) => {
+  //   hit.decompose(ref.current.position, ref.current.rotation, ref.current.scale)
+  // });
 
   return (
     <Interactive
@@ -45,8 +39,15 @@ function App() {
     <ARCanvas camera={{ position: [0, 0, 0.1]}}>
       <ambientLight intensity={0.5} />
       <pointLight position={[5, 5, 5]} />
-
-      <Button position={[0, 0, 0]} />
+      {/* <ImageTracker */}
+      {/*   // onNotVisible={() => { setVisibleState(false); }} */}
+      {/*   // onNewAnchor={(anchor) => console.log(`New anchor ${anchor.id}`)} */}
+      {/*   // onVisible={() => { setVisibleState(true); }} */}
+      {/*   // visible={visibleState} */}
+      {/*   targetImage={targetFile} */}
+      {/* > */}
+        <Button position={[0, 0, 0]} />
+      {/* </ImageTracker> */}
     </ARCanvas>
   )
 }
